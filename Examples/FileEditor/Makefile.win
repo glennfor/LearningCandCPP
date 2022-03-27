@@ -1,0 +1,33 @@
+# Project: File Editor Example
+# Makefile created by Dev-C++ 5.0.0.4
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = FileEditor_private.res
+OBJ      = Main.o $(RES)
+LINKOBJ  = Main.o $(RES)
+LIBS     = -L"C:/Program Files/Dev-Cpp/lib" -L"C:/Program Files/Dev-Cpp/lib/gcc" -static-libstdc++ -static-libgcc -mwindows  
+INCS     = -I"C:/Program Files/Dev-Cpp/include" 
+CXXINCS  = -I"C:/Program Files/Dev-Cpp/include" 
+BIN      = FileEditor.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS   = $(INCS)  
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before FileEditor.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "FileEditor.exe" $(LIBS)
+
+Main.o: Main.c
+	$(CC) -c Main.c -o Main.o $(CFLAGS)
+
+FileEditor_private.res: FileEditor_private.rc Menu.rc 
+	$(WINDRES) -i FileEditor_private.rc --input-format=rc -o FileEditor_private.res -O coff 
