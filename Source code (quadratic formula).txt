@@ -1,0 +1,42 @@
+/* NFOR GLEN YINYU
+ 23rd October 2019
+ Determination of the roots of a regular quadratic equation
+Programming language: ANSI C
+Compiler: Dev c++ (compiler for C and C++)*/
+#include <stdio.h>
+#include<conio.h>
+#include<math.h>
+int main(int argc, char *argv[])// Or int main ()
+{
+int a, b, c, D, rootD, First_root, Second_root;
+printf("This is a code to determine the roots of a quadratic equation\n");
+printf("A quadratic equation is of the form ax^2 + bx + c=0, where a, b, and c are the quadratic coefficient, the linear coefficient, and constant respectively\n");
+/* This code determines the root of a quadratic eqution based on the quadratic formula
+Also the program would only work with integers (positive and negative whole numbers)
+Subsequent modification might improve and extend its application to float datatypes*/
+printf("Please, enter the following values\n");
+printf("Enter the value of a\n");
+scanf("%d", &a);
+printf("Enter the value of b\n");
+scanf("%d", &b);
+printf("Enter the value of c\n");
+scanf("%d", &c);
+D=b*b-4*a*c;// D is the discriminant, b^2-4ac; determines nature of roots
+rootD=sqrt(D);// That is squareroot of b^2-4ac
+if (rootD>=0)
+{
+First_root=(-1*b+rootD)/2*a;
+printf("THE first root of the equation is %d\n", First_root);
+Second_root=(-1*b-rootD)/2*a;
+printf("The second root of the equation is %d\n", Second_root);
+printf("Hence, the roots of the equation are %d and %d\n", First_root, Second_root);
+}
+else
+{
+	printf("The equation has complex roots, hence its solution is undefined in the set of real numbers\n");
+}
+clrscr();
+printf("THANK YOU for using this code\n");
+getch();
+return 0;
+}

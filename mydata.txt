@@ -1,0 +1,2 @@
+<userGradecoaxalconnection> "usuable SIM  Data"=9999996483
+Nodes at 6amp> If unlimited data then open Coax signal

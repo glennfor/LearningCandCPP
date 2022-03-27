@@ -1,0 +1,26 @@
+/*NFOR GLEN YINYU
+ 23rd October 2019
+Determination of the absolute value (Modulus) of an integer
+Programming language: ANSI C
+Compiler:DevC++
+*/
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+  int number, Absolute_value;
+  printf("This code determines the absolute value of anumber\n");
+  printf("Please, enter the number\n");
+  scanf("%d", &number);
+  if (number>=0)
+   {
+printf("The Absolute value of the %d is %d\n", number, number);
+   }
+  else
+   {
+     Absolute_value=-1*number;
+   printf("The absolute value of %d is %d\n", number, Absolute_value);
+   }
+   getch();
+   return 0;
+}
